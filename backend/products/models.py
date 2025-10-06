@@ -30,6 +30,13 @@ class Product(models.Model):
     sale_method = models.CharField(choices=SaleMethodEnum.choices, default=SaleMethodEnum.SALE, max_length=15)
     status = models.CharField(choices=StatusEnum.choices, default=StatusEnum.USED, max_length=4)
     
+    _from_factory = False
+    
+    def save(self, *args, **kwargs):
+        if not self._from_factory:
+            raise RuntimeError("Use ProductFactory para criar produtos.")
+        super().save(*args, **kwargs)
+        
     def update_data(self, name, price, description, category, sale_method, status):
         pass
     
@@ -43,4 +50,3 @@ class Product(models.Model):
 class ProductImage(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="images")
     image = models.ImageField(upload_to="products/")
-    alt_text = models.CharField(max_length=150, blank=True)
