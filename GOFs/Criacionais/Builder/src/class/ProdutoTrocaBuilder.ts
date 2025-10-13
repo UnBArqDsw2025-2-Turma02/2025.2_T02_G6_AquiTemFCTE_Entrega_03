@@ -1,3 +1,4 @@
+import { it } from "node:test";
 import ProdutoBuilder from "./ProdutoBuilder";
 import ProdutoTroca from "./ProdutoTroca";
 
@@ -17,12 +18,14 @@ export default class ProdutoTrocaBuilder implements ProdutoBuilder {
     descricao: string,
     imagem: string,
     preco: number,
-    categoria: string
+    categoria: string,
+    itemInteresse: string[]
   ): void {
     this.produto = new ProdutoTroca(nome, descricao, "Troca");
     this.buildImagem(imagem);
     this.buildPreco(preco);
     this.buildCategoria(categoria);
+    this.buildItensDeInteresseParaTroca(itemInteresse);
   }
 
   public getProduto(): ProdutoTroca | any {
@@ -62,5 +65,11 @@ export default class ProdutoTrocaBuilder implements ProdutoBuilder {
   public buildModalidade(modalidade: string): void {
     if (!this.produto) throw new Error("Chame criarNovoProduto primeiro");
     this.produto.setModalidadeProduto(modalidade);
+  }
+
+  public buildItensDeInteresseParaTroca(itens: string[]): void {
+    if (!this.produto) throw new Error("Chame criarNovoProduto primeiro");
+    if (!itens || itens.length === 0) throw new Error("Em trocas, a lista de itens de interesse não pode ser vazia");
+    this.produto.setItensDeInteresseParaTroca(itens);
   }
 }

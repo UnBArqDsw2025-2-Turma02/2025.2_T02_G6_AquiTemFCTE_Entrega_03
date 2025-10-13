@@ -26,14 +26,15 @@ export default class GerenciamentoDeCriacaoProdutos {
     imagemProduto: string,
     precoProduto: number,
     categoriaProduto: string,
-
+    itemInteresse?: string[]
   ): void {
     this.produtoBuilder.criarNovoProdutoCompleto(
       nomeProduto,
       descricaoProduto,
       imagemProduto,
       precoProduto,
-      categoriaProduto
+      categoriaProduto,
+      itemInteresse
     );
   }
 }

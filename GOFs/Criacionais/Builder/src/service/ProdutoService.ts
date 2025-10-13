@@ -15,46 +15,65 @@ export default class ProdutoService {
 
   public criarProdutoBasico(): void {
     this.router.post("/basic", (req, res) => {
-      const produto = req.body;
+      try {
+        const produto = req.body;
 
-      const produtoBuilder: ProdutoBuilder =
-        produto.tipo === "Troca"
-          ? new ProdutoTrocaBuilder()
-          : new ProdutoVendaBuilder();
+        if (!produto.tipo || (produto.tipo !== "Troca" && produto.tipo !== "Venda")) {
+          res.status(400).send({ error: "Tipo de produto inválido. Use 'Troca' ou 'Venda'." });
+          return;
+        }
 
-      const director = new GerenciamentoDeCriacaoProdutos();
-      director.setProdutoBuilder(produtoBuilder);
+        const produtoBuilder: ProdutoBuilder =
+          produto.tipo === "Troca"
+            ? new ProdutoTrocaBuilder()
+            : new ProdutoVendaBuilder();
 
-      director.construirProduto(produto.nome, produto.descricao);
-      const novoProduto = director.getProduto();
+        const director = new GerenciamentoDeCriacaoProdutos();
+        director.setProdutoBuilder(produtoBuilder);
 
-      res.status(201).send(novoProduto);
+        director.construirProduto(produto.nome, produto.descricao);
+        const novoProduto = director.getProduto();
+
+        res.status(201).send(novoProduto);
+      } catch (error) {
+        res.status(500).send({ error: (error as Error).message });
+      }
     });
   }
 
   public criarProdutoCompleto(): void {
     this.router.post("/full", (req, res) => {
-      const produto = req.body;
+      try {
+        const produto = req.body;
 
-      const produtoBuilder: ProdutoBuilder =
-        produto.tipo === "Troca"
-          ? new ProdutoTrocaBuilder()
-          : new ProdutoVendaBuilder();
+        if (!produto.tipo || (produto.tipo !== "Troca" && produto.tipo !== "Venda")) {
+          res.status(400).send({ error: "Tipo de produto inválido. Use 'Troca' ou 'Venda'." });
+          return;
+        }
 
-      const director = new GerenciamentoDeCriacaoProdutos();
-      director.setProdutoBuilder(produtoBuilder);
+        const produtoBuilder: ProdutoBuilder =
+          produto.tipo === "Troca"
+            ? new ProdutoTrocaBuilder()
+            : new ProdutoVendaBuilder();
 
-      director.construirProdutoCompleto(
-        produto.nome,
-        produto.descricao,
-        produto.imagem,
-        produto.preco,
-        produto.categoria
-      );
+        const director = new GerenciamentoDeCriacaoProdutos();
+        director.setProdutoBuilder(produtoBuilder);
 
-      const novoProduto = director.getProdutoCompleto();
+        director.construirProdutoCompleto(
+          produto.nome,
+          produto.descricao,
+          produto.imagem,
+          produto.preco,
+          produto.categoria,
+          produto.itensDeInteresseParaTroca
+        );
 
-      res.status(200).send(novoProduto);
+        const novoProduto = director.getProdutoCompleto();
+
+        res.status(200).send(novoProduto);
+      } catch (error) {
+        res.status(500).send({ error: (error as Error).message });
+      } 
     });
   }
 }

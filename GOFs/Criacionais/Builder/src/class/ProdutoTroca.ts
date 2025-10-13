@@ -7,7 +7,7 @@ export default class ProdutoTroca extends Produto {
     super(nome, descricao, modalidade);
   }
 
-  public setItensDeInteresseParaTroca(itens: string): void {
-    this.itensDeInteresseParaTroca.push(itens);
+  public setItensDeInteresseParaTroca(itens: string[]): void {
+    this.itensDeInteresseParaTroca = itens;
   }
 }
