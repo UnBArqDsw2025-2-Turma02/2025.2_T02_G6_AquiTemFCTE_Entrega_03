@@ -1,4 +1,3 @@
-import { it } from "node:test";
 import ProdutoBuilder from "./ProdutoBuilder";
 import ProdutoTroca from "./ProdutoTroca";
 
