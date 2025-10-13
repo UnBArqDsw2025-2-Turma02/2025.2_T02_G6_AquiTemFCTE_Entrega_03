@@ -1,3 +1,12 @@
+type produto = {
+  imagemProduto: string[];
+  nomeProduto: string;
+  descricaoProduto: string;
+  precoProduto: number;
+  categoriaProduto: string;
+  estadoProduto: boolean;
+  modalidadeProduto: string;
+};
 export default abstract class Produto {
   private imagemProduto: string[];
   private nomeProduto: string;
@@ -57,7 +66,7 @@ export default abstract class Produto {
     return this.modalidadeProduto;
   }
 
-  public getProdutoCompleto(): any {
+  public getProdutoCompleto(): produto {
     return {
       imagemProduto: this.imagemProduto,
       nomeProduto: this.nomeProduto,
@@ -65,7 +74,7 @@ export default abstract class Produto {
       precoProduto: this.precoProduto,
       categoriaProduto: this.categoriaProduto,
       estadoProduto: this.estadoProduto,
-      modalidadeProduto: this.modalidadeProduto
-    }
+      modalidadeProduto: this.modalidadeProduto,
+    } as produto;
   }
 }

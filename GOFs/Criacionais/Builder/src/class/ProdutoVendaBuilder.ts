@@ -20,9 +20,7 @@ export default class ProdutoVendaBuilder implements ProdutoBuilder {
     categoria: string
   ): void {
     this.produto = new ProdutoVenda(nome, descricao, "Venda");
-    this.buildImagem(imagem);
-    this.buildPreco(preco);
-    this.buildCategoria(categoria);
+    this.buildInformacoesAdicionais(imagem, preco, categoria);
   }
 
   public getProduto(): ProdutoVenda | any {
@@ -39,24 +37,20 @@ export default class ProdutoVendaBuilder implements ProdutoBuilder {
     return this.produto;
   }
 
+  public buildInformacoesAdicionais(
+    foto: string,
+    preco: number,
+    categoria: string,
+  ): void {
+    if (!this.produto) throw new Error("Chame criarNovoProduto primeiro");
+    this.produto.setImagemProduto(foto);
+    this.produto.setPrecoProduto(preco);
+    this.produto.setCategoriaProduto(categoria);
+  }
+
   public buildVendido(): void {
     if (!this.produto) throw new Error("Chame criarNovoProduto primeiro");
     this.produto.setVendido();
-  }
-
-  public buildImagem(foto: string): void {
-    if (!this.produto) throw new Error("Chame criarNovoProduto primeiro");
-    this.produto.setImagemProduto(foto);
-  }
-
-  public buildPreco(preco: number): void {
-    if (!this.produto) throw new Error("Chame criarNovoProduto primeiro");
-    this.produto.setPrecoProduto(preco);
-  }
-
-  public buildCategoria(categoria: string): void {
-    if (!this.produto) throw new Error("Chame criarNovoProduto primeiro");
-    this.produto.setCategoriaProduto(categoria);
   }
 
   public buildModalidade(modalidade: string): void {

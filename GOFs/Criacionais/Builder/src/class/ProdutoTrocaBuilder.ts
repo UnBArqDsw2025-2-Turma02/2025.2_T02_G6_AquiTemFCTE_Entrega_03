@@ -22,10 +22,7 @@ export default class ProdutoTrocaBuilder implements ProdutoBuilder {
     itemInteresse: string[]
   ): void {
     this.produto = new ProdutoTroca(nome, descricao, "Troca");
-    this.buildImagem(imagem);
-    this.buildPreco(preco);
-    this.buildCategoria(categoria);
-    this.buildItensDeInteresseParaTroca(itemInteresse);
+    this.buildInformacoesAdicionais(imagem, preco, categoria, itemInteresse);
   }
 
   public getProduto(): ProdutoTroca | any {
@@ -42,34 +39,22 @@ export default class ProdutoTrocaBuilder implements ProdutoBuilder {
     return this.produto;
   }
 
+  public buildInformacoesAdicionais(foto: string, preco: number, categoria: string, itemInteresse: string[]): void {
+    if (!this.produto) throw new Error("Chame criarNovoProduto primeiro");
+    if (!itemInteresse || itemInteresse.length === 0) throw new Error("Em trocas, a lista de itens de interesse não pode ser vazia");
+    this.produto.setImagemProduto(foto);
+    this.produto.setPrecoProduto(preco);
+    this.produto.setCategoriaProduto(categoria);
+    this.produto.setItensDeInteresseParaTroca(itemInteresse);
+  }
+
   public buildVendido(): void {
     if (!this.produto) throw new Error("Chame criarNovoProduto primeiro");
     this.produto.setVendido();
   }
 
-  public buildImagem(foto: string): void {
-    if (!this.produto) throw new Error("Chame criarNovoProduto primeiro");
-    this.produto.setImagemProduto(foto);
-  }
-
-  public buildPreco(preco: number): void {
-    if (!this.produto) throw new Error("Chame criarNovoProduto primeiro");
-    this.produto.setPrecoProduto(preco);
-  }
-
-  public buildCategoria(categoria: string): void {
-    if (!this.produto) throw new Error("Chame criarNovoProduto primeiro");
-    this.produto.setCategoriaProduto(categoria);
-  }
-
   public buildModalidade(modalidade: string): void {
     if (!this.produto) throw new Error("Chame criarNovoProduto primeiro");
     this.produto.setModalidadeProduto(modalidade);
-  }
-
-  public buildItensDeInteresseParaTroca(itens: string[]): void {
-    if (!this.produto) throw new Error("Chame criarNovoProduto primeiro");
-    if (!itens || itens.length === 0) throw new Error("Em trocas, a lista de itens de interesse não pode ser vazia");
-    this.produto.setItensDeInteresseParaTroca(itens);
   }
 }
