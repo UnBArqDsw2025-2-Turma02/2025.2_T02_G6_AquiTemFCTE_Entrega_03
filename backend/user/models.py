@@ -1,14 +1,15 @@
 from django.db import models
-
-# Create your models here.
+from django.core.validators import RegexValidator, MinLengthValidator
 
 class User(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
-    phone = models.CharField(max_length=11)
+    phone = models.CharField(
+        max_length=11,
+        validators=[RegexValidator(r'^\d{11}$', 'Telefone deve ter 11 dígitos, sem outros caracteres.')]
+    )
     password = models.CharField(max_length=50)
     profile_photo_url = models.URLField(max_length=500, null=True, blank=True)
-
 
     class Meta:
         abstract = True

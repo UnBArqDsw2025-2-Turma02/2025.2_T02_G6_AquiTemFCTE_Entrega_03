@@ -5,7 +5,7 @@ from user.models import Admin, Student
 class UserCreator(ABC):
     
     @abstractmethod
-    def create_user(self):
+    def create_user(self, *args, **kwargs):
         pass
 
 
