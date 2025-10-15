@@ -27,4 +27,12 @@ class PublicacaoManager:
         return list(self._publicacoes)
 
 
-
+# TESTE!
+if __name__ == "__main__":
+    pm1 = PublicacaoManager()
+    pm2 = PublicacaoManager()
+    
+    pm1.adicionar_publicacao({"titulo": "Primeira publicação", "dono": "Ana"})
+    
+    print("Publicações em pm2:", pm2.listar_publicacoes())
+    print("pm1 e pm2 são a mesma instância?", pm1 is pm2)
