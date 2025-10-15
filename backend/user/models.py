@@ -11,6 +11,7 @@ class User(models.Model):
     password = models.CharField(max_length=50)
     profile_photo_url = models.URLField(max_length=500, null=True, blank=True)
 
+
     class Meta:
         abstract = True
     
@@ -24,9 +25,6 @@ class User(models.Model):
     def get_email(self):
         return self.email
     
-    # def set_email(self, email):
-    #     self.email = email
-    
     def get_phone(self):
         return self.phone
     
@@ -36,7 +34,7 @@ class User(models.Model):
     def get_profile_photo_url(self):
         if self.profile_photo_url:
             return self.profile_photo_url
-        return "colocar url de uma imagem padrao"
+        return "imagem padrao"
     
     def update_profile_photo_url(self, profile_photo_url):
         self.profile_photo_url = profile_photo_url
@@ -45,8 +43,8 @@ class User(models.Model):
         self.password = password
     
     def remove_profile_photo(self):
-        if self.profile_photo_url != "colocar url de uma imagem padrao":
-            self.profile_photo_url = "colocar url de uma imagem padrao"
+        if self.profile_photo_url != "imagem padrao":
+            self.profile_photo_url = "imagem padrao"
 
 
 class Student(User):
@@ -66,16 +64,17 @@ class Student(User):
     
     def set_bio(self, bio):
         self.bio = bio
+
+    # declarar futuramente
     
     def get_published_products(self):
-        # return self.published_products.all() 
-        ...
+        pass
     
-    # def delete_publication(self, publication: Publication)
-    # ver depois como vai implementar isso
+    def delete_publication(self):
+        pass
 
-    # def evaluate()
-    # ver depois como vai implementar isso tambem
+    def evaluate(self):
+        pass
 
 class Admin(User):
     
