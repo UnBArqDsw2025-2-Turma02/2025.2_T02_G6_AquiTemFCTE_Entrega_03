@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import IProdutoFactory from "../factories/interfaces/IProdutoFactory";
+import AbstractProdutoFactory from "../factories/interfaces/AbstractProdutoFactory";
 import EletronicoFactory from "../factories/concrete/EletronicoFactory";
 import VestuarioFactory from "../factories/concrete/VestuarioFactory";
 
@@ -18,7 +18,7 @@ export default class ProdutoService {
             try {
                 const { nome, descricao, preco, categoria } = req.body;
 
-                let factory: IProdutoFactory;
+                let factory: AbstractProdutoFactory;
 
                 // Seleciona a fábrica com base na categoria
                 if (categoria === "Eletrônicos") {

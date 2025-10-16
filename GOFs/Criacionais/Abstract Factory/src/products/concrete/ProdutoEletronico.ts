@@ -1,6 +1,6 @@
-import IProduto from "../interfaces/IProduto";
+import InterfaceProduto from "../interfaces/InterfaceProduto";
 
-export default class ProdutoEletronico implements IProduto {
+export default class ProdutoEletronico implements InterfaceProduto {
     public categoria: string = "Eletrônicos";
     constructor(
         public nome: string,

@@ -7,9 +7,9 @@ const produtoService = new ProdutoService();
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use("/produto", produtoService.router);
+app.use("/api", produtoService.router);
 
-app.get('/', (req: Request, res: Response) => {
+app.get('/api', (req: Request, res: Response) => {
     res.send('API "AquiTemFCTE" está no ar!');
 });
 

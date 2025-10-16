@@ -1,15 +1,15 @@
-import IProdutoFactory from "../interfaces/IProdutoFactory";
-import IProduto from "../../products/interfaces/IProduto";
-import IAcessorio from "../../products/interfaces/IAcessorio";
+import AbstractProdutoFactory from "../interfaces/AbstractProdutoFactory";
+import InterfaceProduto from "../../products/interfaces/InterfaceProduto";
+import InterfaceAcessorio from "../../products/interfaces/InterfaceAcessorio";
 import ProdutoEletronico from "../../products/concrete/ProdutoEletronico";
 import Garantia from "../../products/concrete/acessorios/Garantia";
 
-export default class EletronicoFactory implements IProdutoFactory {
-    public criarProduto(nome: string, descricao: string, preco: number): IProduto {
+export default class EletronicoFactory implements AbstractProdutoFactory {
+    public criarProduto(nome: string, descricao: string, preco: number): InterfaceProduto {
         return new ProdutoEletronico(nome, descricao, preco);
     }
 
-    public criarAcessorio(): IAcessorio {
+    public criarAcessorio(): InterfaceAcessorio {
         return new Garantia();
     }
 }

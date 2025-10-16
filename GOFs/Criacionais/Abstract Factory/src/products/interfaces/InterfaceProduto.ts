@@ -1,4 +1,4 @@
-export default interface IProduto {
+export default interface InterfaceProduto {
     nome: string;
     descricao: string;
     preco: number;
