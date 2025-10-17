@@ -6,11 +6,11 @@ export default class ProdutoTroca extends Produto {
   constructor(
     nome: string,
     descricao: string,
-    modalidade: string,
     listaItemInteresse: String[]
   ) {
-    super(nome, descricao, modalidade);
+    super(nome, descricao);
     this.listaItemInteresse = listaItemInteresse;
+    this.setModalidade("Troca");
   }
 
   getListaItemInteresse(): String[] {

@@ -8,10 +8,9 @@ export default abstract class Produto implements Catalogo {
   private imagem: string[];
   private estado: boolean;
 
-  constructor(nome: string, descricao: string, modalidade: string) {
+  constructor(nome: string, descricao: string) {
     this.nome = nome;
     this.descricao = descricao;
-    this.modalidade = modalidade;
     this.preco = 0;
     this.imagem = [];
     this.estado = true;

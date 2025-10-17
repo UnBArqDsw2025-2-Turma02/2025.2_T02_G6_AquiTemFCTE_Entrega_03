@@ -1,10 +1,20 @@
 import Catalogo from "./Catalogo";
 
 export default class Categoria implements Catalogo {
+  private nome: string;
   private produtos: Catalogo[];
 
-  constructor() {
+  constructor(nome: string) {
+    this.nome = nome;
     this.produtos = [];
+  }
+
+  setNome(nome: string): void {
+    this.nome = nome;
+  }
+
+  getNome(): string {
+    return this.nome;
   }
 
   adicionarProduto(produto: Catalogo): void {
