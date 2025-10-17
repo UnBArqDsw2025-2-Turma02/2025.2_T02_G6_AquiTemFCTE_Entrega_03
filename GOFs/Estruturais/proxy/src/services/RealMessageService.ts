@@ -1,5 +1,5 @@
-import { IMessageService } from './IMessageService';
-import { IServiceResponse } from './IServiceResponse';
+import { IMessageService } from '../interfaces/IMessageService';
+import { IServiceResponse } from '../interfaces/IServiceResponse';
 
 export class RealMessageService implements IMessageService {
 	public sendMessage(senderEmail: string, receiverEmail: string, message: string): IServiceResponse {
