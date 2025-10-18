@@ -2,11 +2,11 @@ import type Catalogo from "./Catalogo";
 
 export default class Categoria implements Catalogo {
   private nome: string;
-  private produtos: Catalogo[];
+  private catalogos: Catalogo[];
 
   constructor(nome: string) {
     this.nome = nome;
-    this.produtos = [];
+    this.catalogos = [];
   }
 
   setNome(nome: string): void {
@@ -17,21 +17,21 @@ export default class Categoria implements Catalogo {
     return this.nome;
   }
 
-  adicionarProduto(produto: Catalogo): void {
-    this.produtos.push(produto);
+  adicionarCatalogo(catalogo: Catalogo): void {
+    this.catalogos.push(catalogo);
   }
 
-  removerProduto(produto: Catalogo): void {
-    const index = this.produtos.indexOf(produto);
+  removerCatalogo(catalogo: Catalogo): void {
+    const index = this.catalogos.indexOf(catalogo);
     if (index !== -1) {
-      this.produtos.splice(index, 1);
+      this.catalogos.splice(index, 1);
     }
   }
 
   getDados(): void {
-    this.produtos.forEach((produto) => {
+    this.catalogos.forEach((catalogo) => {
       console.log(`Categoria: ${this.nome}`);
-      produto.getDados();
+      catalogo.getDados();
     });
   }
 }
