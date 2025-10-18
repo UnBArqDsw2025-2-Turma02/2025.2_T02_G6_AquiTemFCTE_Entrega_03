@@ -4,14 +4,13 @@ import ProdutoVenda from "./class/ProdutoVenda";
 function main() {
   console.log("=== Demonstração do Padrão Composite - AquiTemFCTE ===\n");
 
-  // Criando a categoria principal "Livros"
+  // CRIA CATEGORIA "LIVROS"
   const categoriaLivros = new Categoria("Livros");
 
-  // Criando subcategorias dentro de "Livros"
+  // CRIA SUBCATEGORIAS "CÁLCULO" E "ELETRÔNICA" DENTRO DE "LIVROS"
   const categoriaCalculo = new Categoria("Cálculo");
   const categoriaEletronica = new Categoria("Eletrônica");
 
-  // Criando produtos (anúncios) para a categoria Cálculo
   const livroGuidorizzi = new ProdutoVenda(
     "Livro do Guidorizzi",
     "Livro de Cálculo Diferencial e Integral do Guidorizzi"
@@ -24,35 +23,33 @@ function main() {
   );
   livroStewart.setPreco(200.0);
 
-  // Adicionando produtos à categoria Cálculo
+  // ADICIONA PRODUTOS À SUBCATEGORIA CÁLCULO
   categoriaCalculo.adicionarProduto(livroGuidorizzi);
   categoriaCalculo.adicionarProduto(livroStewart);
 
-  // Criando produto para a categoria Eletrônica (dentro de Livros)
   const protoboard = new ProdutoVenda(
     "Protoboard usada",
     "Protoboard em bom estado de conservação"
   );
   protoboard.setPreco(25.0);
 
+  // ADICIONA PRODUTO À SUBCATEGORIA ELETRÔNICA
   categoriaEletronica.adicionarProduto(protoboard);
 
-  // Criando produto direto na categoria Livros
   const vadeMecum = new ProdutoVenda(
     "Vade Mecum 2025",
     "Vade Mecum atualizado para 2025"
   );
   vadeMecum.setPreco(80.0);
 
-  // Adicionando subcategorias e produto à categoria principal Livros
+  // ADICIONA SUBCATEGORIAS E PRODUTO À CATEGORIA LIVROS
   categoriaLivros.adicionarProduto(categoriaCalculo);
   categoriaLivros.adicionarProduto(categoriaEletronica);
   categoriaLivros.adicionarProduto(vadeMecum);
 
-  // Criando a categoria "Eletrônicos" (separada de Livros)
+  // CRIA A CATEGORIA "ELETRÔNICOS" (SEPARADA DE LIVROS)
   const categoriaEletronicos = new Categoria("Eletrônicos");
 
-  // Criando produtos para a categoria Eletrônicos
   const multimetro = new ProdutoVenda(
     "Multímetro",
     "Multímetro digital profissional"
@@ -65,11 +62,10 @@ function main() {
   );
   kitResistores.setPreco(35.0);
 
-  // Adicionando produtos à categoria Eletrônicos
+  // ADICIONA PRODUTOS À CATEGORIA ELETRÔNICOS
   categoriaEletronicos.adicionarProduto(multimetro);
   categoriaEletronicos.adicionarProduto(kitResistores);
 
-  // Exibindo a estrutura hierárquica
   console.log("📚 CATEGORIA: LIVROS");
   console.log("├── 🧮 Subcategoria: Cálculo");
   console.log("│   ├── 📖 Produto: Livro do Guidorizzi (Leaf)");
@@ -83,7 +79,7 @@ function main() {
   console.log("└── 🔧 Produto: Kit de resistores (Leaf)");
   console.log("\n" + "=".repeat(60) + "\n");
 
-  // Demonstrando o padrão Composite em ação
+  // EXECUÇÃO DO COMPOSITE
   console.log("🔄 EXECUTANDO MÉTODO getDados() DA CATEGORIA LIVROS:");
   console.log(
     "(Demonstra o padrão Composite propagando a chamada para todos os elementos)\n"
@@ -99,5 +95,4 @@ function main() {
   categoriaEletronicos.getDados();
 }
 
-// Executando a demonstração
 main();
