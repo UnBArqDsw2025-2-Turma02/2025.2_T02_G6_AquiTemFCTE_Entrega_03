@@ -1,4 +1,4 @@
-import Catalogo from "./Catalogo";
+import type Catalogo from "./Catalogo";
 
 export default abstract class Produto implements Catalogo {
   private nome: string;
@@ -13,6 +13,7 @@ export default abstract class Produto implements Catalogo {
     this.descricao = descricao;
     this.preco = 0;
     this.imagem = [];
+    this.modalidade = "";
     this.estado = true;
   }
 
@@ -71,5 +72,6 @@ export default abstract class Produto implements Catalogo {
     console.log(`Modalidade: ${this.modalidade}`);
     console.log(`Imagens: ${this.imagem.join(", ")}`);
     console.log(`Estado: ${this.estado ? "Ativo" : "Inativo"}`);
+    console.log("\n");
   }
 }

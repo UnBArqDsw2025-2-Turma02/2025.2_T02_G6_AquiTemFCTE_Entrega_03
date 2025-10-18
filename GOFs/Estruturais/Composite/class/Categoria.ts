@@ -1,4 +1,4 @@
-import Catalogo from "./Catalogo";
+import type Catalogo from "./Catalogo";
 
 export default class Categoria implements Catalogo {
   private nome: string;
@@ -30,6 +30,7 @@ export default class Categoria implements Catalogo {
 
   getDados(): void {
     this.produtos.forEach((produto) => {
+      console.log(`Categoria: ${this.nome}`);
       produto.getDados();
     });
   }
