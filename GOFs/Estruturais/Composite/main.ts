@@ -24,8 +24,8 @@ function main() {
   livroStewart.setPreco(200.0);
 
   // ADICIONA PRODUTOS À SUBCATEGORIA CÁLCULO
-  categoriaCalculo.adicionarProduto(livroGuidorizzi);
-  categoriaCalculo.adicionarProduto(livroStewart);
+  categoriaCalculo.adicionarCatalogo(livroGuidorizzi);
+  categoriaCalculo.adicionarCatalogo(livroStewart);
 
   const protoboard = new ProdutoVenda(
     "Protoboard usada",
@@ -34,7 +34,7 @@ function main() {
   protoboard.setPreco(25.0);
 
   // ADICIONA PRODUTO À SUBCATEGORIA ELETRÔNICA
-  categoriaEletronica.adicionarProduto(protoboard);
+  categoriaEletronica.adicionarCatalogo(protoboard);
 
   const vadeMecum = new ProdutoVenda(
     "Vade Mecum 2025",
@@ -43,9 +43,9 @@ function main() {
   vadeMecum.setPreco(80.0);
 
   // ADICIONA SUBCATEGORIAS E PRODUTO À CATEGORIA LIVROS
-  categoriaLivros.adicionarProduto(categoriaCalculo);
-  categoriaLivros.adicionarProduto(categoriaEletronica);
-  categoriaLivros.adicionarProduto(vadeMecum);
+  categoriaLivros.adicionarCatalogo(categoriaCalculo);
+  categoriaLivros.adicionarCatalogo(categoriaEletronica);
+  categoriaLivros.adicionarCatalogo(vadeMecum);
 
   // CRIA A CATEGORIA "ELETRÔNICOS" (SEPARADA DE LIVROS)
   const categoriaEletronicos = new Categoria("Eletrônicos");
@@ -63,8 +63,8 @@ function main() {
   kitResistores.setPreco(35.0);
 
   // ADICIONA PRODUTOS À CATEGORIA ELETRÔNICOS
-  categoriaEletronicos.adicionarProduto(multimetro);
-  categoriaEletronicos.adicionarProduto(kitResistores);
+  categoriaEletronicos.adicionarCatalogo(multimetro);
+  categoriaEletronicos.adicionarCatalogo(kitResistores);
 
   console.log("📚 CATEGORIA: LIVROS");
   console.log("├── 🧮 Subcategoria: Cálculo");
