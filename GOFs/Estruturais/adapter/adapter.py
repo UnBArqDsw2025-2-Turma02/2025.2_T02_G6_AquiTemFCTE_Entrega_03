@@ -11,12 +11,14 @@ class CategoriaEnum(Enum):
     LIVRO = "Livro"
     ROUPA = "Roupa"
     MOVEL = "Móvel"
+    IMOVEL = "Imóvel"
     OUTROS = "Outros"
 
 
 class ModalidadeEnum(Enum):
     VENDA = "Venda"
     TROCA = "Troca"
+    ALUGUEL = "Aluguel"
     VENDA_TROCA = "Venda/Troca"
 
 
@@ -87,10 +89,10 @@ class Aluno:
 
 
 class Publicacao:
-    def __init__(self, produto: Produto, dono: Aluno):
+    def __init__(self, produto: Produto, dono: Aluno, status: StatusEnum = StatusEnum.DISPONIVEL):
         self.produto = produto
         self.dono = dono
-        self.status = StatusEnum.DISPONIVEL
+        self.status = status
         self.data_publicacao = date.today()
 
     def obter_status(self):
@@ -119,15 +121,15 @@ class Aluguel:
 
 class AdapterAluguel(Produto):
     def __init__(self, aluguel: Aluguel):
-        valor_total = aluguel.valor_mensal + aluguel.condominio
+        valor_total = aluguel.calcular_valor_total()
         descricao = f"{aluguel.metragem}m² - Condomínio: R${aluguel.condominio:.2f} - Número de quartos: {aluguel.quartos}"
         super().__init__(
             id_produto=999,
             nome=f"Imóvel em {aluguel.endereco}",
             preco=valor_total,
             descricao=descricao,
-            categoria=CategoriaEnum.MOVEL,
-            modalidade=ModalidadeEnum.VENDA,
+            categoria=CategoriaEnum.IMOVEL,
+            modalidade=ModalidadeEnum.ALUGUEL,
             estado=EstadoEnum.USADO
         )
         self.aluguel = aluguel
@@ -136,7 +138,7 @@ class AdapterAluguel(Produto):
 
 if __name__ == "__main__":
     aluno = Aluno(
-        nome="Zoé",
+        nome="Zoe",
         matricula=231011111,
         email="231011111@aluno.unb.br",
         telefone="99999-9999",
