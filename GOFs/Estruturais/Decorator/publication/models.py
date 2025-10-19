@@ -80,6 +80,10 @@ class PublicationDecorator(PublicationInterface):
 
 
 class VerifiedPublicationDecorator(PublicationDecorator):
+    def __init__(self, publication: PublicationInterface):
+        super().__init__(publication)
+        self.is_approved: bool = self._publication.get_status() == StatusEnum.APPROVED
+
     def get_product(self):
         if self._publication.get_status() != StatusEnum.APPROVED:
             raise PermissionError("Esta publicação ainda não foi aprovada.")
@@ -87,3 +91,4 @@ class VerifiedPublicationDecorator(PublicationDecorator):
 
     def approve(self):
         self._publication.change_status(StatusEnum.APPROVED)
+        self.is_approved = True
