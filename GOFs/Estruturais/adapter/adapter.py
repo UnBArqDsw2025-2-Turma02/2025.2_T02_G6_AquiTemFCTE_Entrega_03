@@ -137,6 +137,7 @@ class AdapterAluguel(Produto):
 
 
 if __name__ == "__main__":
+
     aluno = Aluno(
         nome="Zoe",
         matricula=231011111,
