@@ -11,7 +11,7 @@
       - [3.1.3. Factory Method](./PadroesDeProjeto/3.1.3.FactoryMethod.md)
       - [3.1.4. Abstract Factory](./PadroesDeProjeto/3.1.4.Abstract-factory.md)
     - [3.2. Padrões de Projeto GoFs Estruturais](./PadroesDeProjeto/3.2.GoFsEstruturais.md)
-      - [3.2.1. Decorator](./PadroesDeProjeto/3.2.1.Decorator.md)
+      - [3.2.4. Decorator](./PadroesDeProjeto/3.2.4.Decorator.md)
     - [3.3. Padrões de Projeto GoFs Comportamentais](./PadroesDeProjeto/3.3.GoFsComportamentais.md)
     - [3.4. Participações - Padrões de Projeto](./PadroesDeProjeto/3.4.ParticipacoesPadroes.md)
     - [3.5. Iniciativas Extras - Padrões de Projeto](./PadroesDeProjeto/3.5.IniciativasExtras.md)
