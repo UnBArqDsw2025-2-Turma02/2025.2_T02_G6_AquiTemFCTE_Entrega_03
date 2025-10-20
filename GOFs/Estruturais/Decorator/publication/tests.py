@@ -108,5 +108,3 @@ class VerifiedPublicationDecoratorTestCase(TestCase):
         decorator = VerifiedPublicationDecorator(self.publication)
         self.assertEqual(decorator.get_owner(), self.user)
         self.assertEqual(decorator.get_status(), StatusEnum.PENDING)
-
-
