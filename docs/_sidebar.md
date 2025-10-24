@@ -23,5 +23,6 @@
       - [3.3.3. Iterator](./PadroesDeProjeto/3.3.3.Iterator.md)
     - [3.4. Participações - Padrões de Projeto](./PadroesDeProjeto/3.4.ParticipacoesPadroes.md)
     - [3.5. Iniciativas Extras - Padrões de Projeto](./PadroesDeProjeto/3.5.IniciativasExtras.md)
+      - [3.5.1. Ata de reunião 1](./Extra/3.5.1.ata01.md)
       - [3.5.2. Ata de reunião 2](./Extra/3.5.2.ata02.md)
       - [3.5.3. Ata de reunião 3](./Extra/3.5.3.ata03.md)
