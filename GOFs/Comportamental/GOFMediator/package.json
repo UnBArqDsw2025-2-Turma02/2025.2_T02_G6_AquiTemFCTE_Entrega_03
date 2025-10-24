@@ -1,0 +1,12 @@
+{
+  "name": "gof-mediator",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "npx tsx tests.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.0.0"
+  }
+}
