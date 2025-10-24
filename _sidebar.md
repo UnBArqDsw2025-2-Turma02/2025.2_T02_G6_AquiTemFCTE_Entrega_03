@@ -21,6 +21,7 @@
       - [3.3.2. State](./PadroesDeProjeto/3.3.2.State.md)
       - [3.3.3. Iterator](./PadroesDeProjeto/3.3.3.Iterator.md)
       - [3.3.4. Mediator](./PadroesDeProjeto/3.3.4.Mediator.md)
+      - [3.3.5 Command](./PadroesDeProjeto/3.3.5.Command.md)
     - [3.4. Participações - Padrões de Projeto](./PadroesDeProjeto/3.4.ParticipacoesPadroes.md)
     - [3.5. Iniciativas Extras - Padrões de Projeto](./PadroesDeProjeto/3.5.IniciativasExtras.md)
       - [3.5.1. Ata de reunião 1](./Extra/3.5.1.ata01.md)
