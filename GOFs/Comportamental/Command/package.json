@@ -1,0 +1,18 @@
+{
+  "name": "command-pattern",
+  "version": "1.0.0",
+  "description": "Exemplo do padrão de projeto GOF Command aplicado a publicações",
+  "main": "main.ts",
+  "scripts": {
+    "start": "ts-node main.ts"
+  },
+  "keywords": [],
+  "author": "Caio Sabino",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

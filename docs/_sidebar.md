@@ -1,6 +1,6 @@
 <!-- docs/_sidebar.md -->
+
 - [Home](/)
-- [Projetos](./Projeto/Projeto.md)
 
 - **Padrões de Projeto**
   - [3. Desenho de Software (Padrões de Projeto)](./PadroesDeProjeto/3.PadroesDeProjeto.md)
@@ -17,6 +17,16 @@
       - [3.2.4. Decorator](./PadroesDeProjeto/3.2.4.Decorator.md)
       - [3.2.5. Composite](./PadroesDeProjeto/3.2.5.Composite.md)
     - [3.3. Padrões de Projeto GoFs Comportamentais](./PadroesDeProjeto/3.3.GoFsComportamentais.md)
+      - [3.3.1 Strategy](./PadroesDeProjeto/3.3.1.Strategy.md)
+      - [3.3.2. State](./PadroesDeProjeto/3.3.2.State.md)
+      - [3.3.3. Iterator](./PadroesDeProjeto/3.3.3.Iterator.md)
+      - [3.3.4. Mediator](./PadroesDeProjeto/3.3.4.Mediator.md)
+      - [3.3.5 Command](./PadroesDeProjeto/3.3.5.Command.md)
     - [3.4. Participações - Padrões de Projeto](./PadroesDeProjeto/3.4.ParticipacoesPadroes.md)
     - [3.5. Iniciativas Extras - Padrões de Projeto](./PadroesDeProjeto/3.5.IniciativasExtras.md)
+      - [3.5.1. Ata de reunião 1](./Extra/3.5.1.ata01.md)
+      - [3.5.2. Ata de reunião 2](./Extra/3.5.2.ata02.md)
       - [3.5.3. Ata de reunião 3](./Extra/3.5.3.ata03.md)
+      - [3.5.4. Planejamento CI/CD](./Extra/3.5.4.PlanejamentoCICD.md)
+      - [3.5.5. Evolução Diagrama de Classes](./Extra/3.5.5.DiagramaClasses.md)
+      - [3.5.6. GoF Mediator para o Chat](./Extra/3.5.6.Chat.md)
