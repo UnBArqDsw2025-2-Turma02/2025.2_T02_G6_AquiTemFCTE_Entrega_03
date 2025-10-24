@@ -1,5 +1,5 @@
 <!-- docs/_sidebar.md -->
-- [Home](/docs)
+- [Home](/)
 - [Projetos](./Projeto/Projeto.md)
 
 - **Padrões de Projeto**
