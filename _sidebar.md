@@ -29,3 +29,4 @@
       - [3.5.3. Ata de reunião 3](./Extra/3.5.3.ata03.md)
       - [3.5.4. Planejamento CI/CD](./Extra/3.5.4.PlanejamentoCICD.md)
       - [3.5.5. Evolução Diagrama de Classes](./Extra/3.5.5.DiagramaClasses.md)
+      - [3.5.6. GoF Mediator para o Chat](./Extra/3.5.6.Chat.md)
