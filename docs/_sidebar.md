@@ -17,6 +17,7 @@
       - [3.2.4. Decorator](./PadroesDeProjeto/3.2.4.Decorator.md)
       - [3.2.5. Composite](./PadroesDeProjeto/3.2.5.Composite.md)
     - [3.3. Padrões de Projeto GoFs Comportamentais](./PadroesDeProjeto/3.3.GoFsComportamentais.md)
+      - [3.3.1 Strategy](./PadroesDeProjeto/3.3.1.Strategy.md)
     - [3.4. Participações - Padrões de Projeto](./PadroesDeProjeto/3.4.ParticipacoesPadroes.md)
     - [3.5. Iniciativas Extras - Padrões de Projeto](./PadroesDeProjeto/3.5.IniciativasExtras.md)
       - [3.5.3. Ata de reunião 3](./Extra/3.5.3.ata03.md)
